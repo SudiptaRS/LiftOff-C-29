@@ -1,16 +1,24 @@
-#include<stdio.h>
-int main(){
-    int n ;
-    printf("Enter the number:");
-    scanf("%d",&n);
-    if(n>0){
-        printf("Positive\n");
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int i, freq[256] = {0};
+
+    printf("Enter a string: ");
+    gets(str);
+
+    for (i = 0; i < strlen(str); i++) {
+        freq[str[i]]++;
     }
-    else if(n<0){
-    printf("Negative\n");
+
+    printf("Character frequency in the string:\n");
+
+    for (i = 0; i < 256; i++) {
+        if (freq[i] != 0) {
+            printf("'%c' occurs %d times\n", i, freq[i]);
+        }
     }
-    else {
-        printf("Zero\n");
-    }
+
     return 0;
 }

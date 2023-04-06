@@ -1,15 +1,18 @@
-#include<stdio.h>
-int main(){
-    int a ;
-    printf("Enter the first number:");
-    scanf("%d",&a);
-    int r;
-    int sum=0;
-    do{
-        r=a%10;
-        sum=sum+r;
-        a=a/10;
-    }while (a!=0);
-   printf("Sum of the digits of the number = %d\n",sum);
+#include <stdio.h>
+
+int main() {
+    int num1, num2, sum;
+    int *ptr1, *ptr2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    ptr1 = &num1;
+    ptr2 = &num2;
+
+    sum = *ptr1 + *ptr2;
+
+    printf("Sum of %d and %d is %d", *ptr1, *ptr2, sum);
+
     return 0;
 }
